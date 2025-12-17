@@ -40,13 +40,13 @@ breathe
 
 3. Activate .venv environment
 
-```
+```cmd
 .venv\Scripts\activate
 ```
 
 4. Install python packages
 
-```
+```cmd
 python -m pip install -r requirements.txt
 ```
 
@@ -71,7 +71,7 @@ Project Folder/
 2. In the terminal, navigate to `docs/` and
    run `sphinx-quickstart.exe`
 
-```
+```cmd
 cd docs/
 sphinx-quickstart.exe
 ```
@@ -81,7 +81,7 @@ Fill out the given prompts.
 The default HTML Sphinx documentation can be 
 created running in the `docs/` folder
 
-```
+```cmd
 make html
 ```
 
