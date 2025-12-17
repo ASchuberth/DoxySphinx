@@ -27,8 +27,9 @@ official website
 1. Create python environment using venv
 
 ```cmd
-py -m venv .venv
+python -m venv .venv
 ```
+
 2. Add `requirements.txt` with the following:
 
 ```
@@ -36,6 +37,7 @@ sphinx
 sphinx-rtd-theme
 breathe
 ```
+
 3. Activate .venv environment
 
 ```
@@ -45,7 +47,7 @@ breathe
 4. Install python packages
 
 ```
-py -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ## Project Setup

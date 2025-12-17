@@ -4,8 +4,9 @@
 
 find_package(Doxygen REQUIRED)
 
+message("Doxygen")
 
-if(Doxygen_FOUND)
+# if(Doxygen_FOUND)
 
 
     # Doxyfile Configurations
@@ -60,7 +61,7 @@ if(Doxygen_FOUND)
     message("DOXYGEN_INDEX_FILE: ${DOXYGEN_INDEX_FILE}")
 
 
-endif()
+# endif()
 
 
 find_package(Sphinx REQUIRED)
@@ -69,15 +70,21 @@ find_package(Sphinx REQUIRED)
 set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/source)
 set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/sphinx)
 
-add_custom_target(Sphinx ALL
+message("CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
+message("SPHINX_EXECUTABLE ${SPHINX_EXECUTABLE}")
+message("SPHINX_SOURCE: ${SPHINX_SOURCE}")
+message("SPHINX_BUILD: ${SPHINX_BUILD}")
+
+add_custom_target(sphinx ALL
                   COMMAND
-                  ${SPHINX_EXECUTABLE} -b html
-                  ${SPHINX_SOURCE} ${SPHINX_BUILD}
+		  ${SPHINX_EXECUTABLE} -b html
                   -Dbreathe_projects.doxysphinx=${DOXYGEN_OUTPUT_DIRECTORY}/xml
+		  ${SPHINX_SOURCE} ${SPHINX_BUILD}
                   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
                   DEPENDS
                    # Other docs files you want to track should go here (or in some variable)
-                   ${CMAKE_CURRENT_SOURCE_DIR}/index.rst
-                   ${DOXYGEN_INDEX_FILE}
-                   MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
+		   ${SPHINX_SOURCE}/index.rst
+                   # ${DOXYGEN_INDEX_FILE}
+		   doxygen
+                   # MAIN_DEPENDENCY ${SPHINX_SOURCE}/conf.py
                   COMMENT "Generating documentation with Sphinx")

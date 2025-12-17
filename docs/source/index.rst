@@ -18,3 +18,8 @@ documentation for details.
 .. doxygenstruct:: struct2
    :members:
 
+.. doxygenclass:: dog
+   :members:
+
+.. doxygenfunction:: add 
+   :project: doxysphinx
