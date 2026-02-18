@@ -13,7 +13,7 @@ See the post [here](https://amschubehttps://amschuberth.gitlab.io/blog/posts/dox
 This example uses `doxygen_add_docs()`, which was added in CMake v3.9, so ensure your version is >= to this.
 
 I have tested this example with 
-- CMake v4.3.2
+- CMake v4.2.3
 - Python v3.13.5
 - Doxygen v1.16.1
 
