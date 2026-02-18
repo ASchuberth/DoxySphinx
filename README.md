@@ -4,6 +4,8 @@ Simple example of using Doxygen, Sphinx, and Breathe for creating documentation 
 
 See the post [here](https://amschubehttps://amschuberth.gitlab.io/blog/posts/doxysphinx/).
 
+Read the Docs hosted documentation for this example can be found [here](https://doxygensphinxexample.readthedocs.io/en/latest/).
+
 ## Prerequisites
 
 1. CMake 
