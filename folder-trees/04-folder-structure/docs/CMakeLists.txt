@@ -65,7 +65,7 @@ if(Sphinx_FOUND AND Doxygen_FOUND)
                   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
                   DEPENDS
                    # Other docs files you want to track should go here (or in some variable)
-		   ${SPHINX_SOURCE}/index.rst
+		   ${SPHINX_SOURCE}/index.md
 		   doxygen
                   COMMENT "Generating documentation with Sphinx")
 

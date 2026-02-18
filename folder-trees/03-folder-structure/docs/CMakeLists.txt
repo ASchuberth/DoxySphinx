@@ -45,28 +45,3 @@ if(Doxygen_FOUND)
 
 endif()
 
-find_package(Sphinx)
-
-if(Sphinx_FOUND AND Doxygen_FOUND)
-
-  set(SPHINX_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/source)
-  set(SPHINX_BUILD ${CMAKE_CURRENT_BINARY_DIR}/sphinx)
-
-  message("CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
-  message("SPHINX_EXECUTABLE ${SPHINX_EXECUTABLE}")
-  message("SPHINX_SOURCE: ${SPHINX_SOURCE}")
-  message("SPHINX_BUILD: ${SPHINX_BUILD}")
-
-  add_custom_target(docs ALL
-                  COMMAND
-		  ${SPHINX_EXECUTABLE} -b html
-                  -Dbreathe_projects.doxysphinx=${DOXYGEN_OUTPUT_DIRECTORY}/xml
-		  ${SPHINX_SOURCE} ${SPHINX_BUILD}
-                  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-                  DEPENDS
-                   # Other docs files you want to track should go here (or in some variable)
-		   ${SPHINX_SOURCE}/index.rst
-		   doxygen
-                  COMMENT "Generating documentation with Sphinx")
-
-endif()
